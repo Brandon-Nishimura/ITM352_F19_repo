@@ -1,3 +1,2 @@
-# hello-world
-## Hello, World.
+# Hello, world. 
 Star-gazer, of the literal and metaphorical variety. 
