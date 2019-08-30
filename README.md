@@ -1,2 +1,3 @@
 # hello-world
-This is a description.
+
+Star-gazer, of the literal and metaphorical variety. 
