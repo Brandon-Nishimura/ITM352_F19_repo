@@ -1,0 +1,29 @@
+body {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+p.regular {
+    text-align: center;   
+    Font: "Times";
+    font-size: 40px;
+    font-style: normal;
+}
+
+h1,h2 {
+    text-align: center;
+    color: palevioletred;
+    Font: "Arial";
+    font-size: "100px";
+    font-style: "bold"
+}
+
+img {  
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin: auto;
+    margin-right: auto;
+    width: 50%;
+}

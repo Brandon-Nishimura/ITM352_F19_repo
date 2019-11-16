@@ -1,0 +1,130 @@
+<!-- Original Author: Dan Port
+     Edited by: Brandon Nishimura
+Purpose: To serve as a display for the products of our store.
+
+At the top, we have the functions we need for our page to run.
+-->
+
+<script>
+  function isNonNegInt(q, return_errors = false) {
+    errors = []; // assume no errors at first
+    if (q == '') q = 0; // handle blank inputs as if they are 0
+    if (Number(q) != q) errors.push('<font color="red">Not a number!</font>'); // Check if string is a number value
+    else if (q < 0) errors.push('<font color="red">Negative value!</font>'); // Check if it is non-negative
+    else if (parseInt(q) != q) errors.push('<font color="red">Not an integer!</font>'); // Check that it is an integer
+    return return_errors ? errors : (errors.length == 0);
+  }
+
+  function checkQuantityTextbox(theTextbox) {
+    errs = isNonNegInt(theTextbox.value, true);
+    if (errs.length == 0) errs = ['You want:'];
+    if (theTextbox.value.trim() == '') errs = ['Quantity'];
+    document.getElementById(theTextbox.name + '_label').innerHTML = errs.join(", ");
+  }
+
+  window.onload = function () {
+    let params = (new URL(document.location)).searchParams; // get the query string which has the form data
+
+    // The form was submitted, so now we check that quantities are valid then redirect to invoice if everything checks out.
+
+    if (params.has('purchase_submit')) {
+      has_errors = false; // assume quantities are valid
+      total_qty = 0;      // created a variable to check if anything was added
+      for (i = 0; i < products.length; i++) {
+        if (params.has(`quantity${i}`)) {
+          a_qty = params.get(`quantity${i}`);
+          total_qty += a_qty;
+          if (!isNonNegInt(a_qty)) {
+            has_errors = true; // if there is an invalid quantity, we set the variable to true
+          }
+        }
+      }
+      // then we use that variable to use an alert
+      if (has_errors) {
+        alert("Please enter only valid quantities!");
+      } else if (total_qty == 0) { // and if they have no products, tell them that
+        alert("Please select some quantities!");
+      } else { // and if everything is good, then we move to the invoice!
+        window.location = `./invoice.html${document.location.search}`;
+        window.stop;
+      }
+    }
+  }
+</script>
+
+<!-- Here's our JSON array for our product listing. -->
+
+<script>
+  products = [{
+    "model": "Squid (Limited!)",
+    "price": 7.00,
+    "image": "/images/Product1.jpeg"
+  },
+  {
+    "model": "Triceratops",
+    "price": 5.00,
+    "image": "/images/Product2.jpeg"
+  },
+  {
+    "model": "Octopus",
+    "price": 5.00,
+    "image": "/images/Product3.jpeg"
+  },
+  {
+    "model": "Slime",
+    "price": 5.00,
+    "image": "/images/Product4.jpeg"
+  },
+  {
+    "model": "Squid",
+    "price": 5.00,
+    "image": "/images/Product5.jpeg"
+  }
+  ]
+</script>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Loopy-Dee-Knot</title>
+  <link href="newstyle.css" rel="stylesheet">
+</head>
+
+<!-- Here's the actual page! We use a 'for' loop JS script to print out our array in a table with templates! -->
+
+<body>
+
+  <header>
+    <h1>Loopy-Dee-Knot's Store Page!</h1>
+  </header>
+  <div>
+    <main>
+      <form>
+        <script>
+          for (i = 0; i < products.length; i++) {
+            document.write(`
+                  <section class="item">
+                  <h2>${products[i].model}</h2>
+                  <p>$${products[i].price}</p>
+                  <label id="quantity${i}_label"}">Quantity</label>
+                  <input type="text" placeholder="0" name="quantity${i}" onkeyup="checkQuantityTextbox(this);">
+                  <img src="${products[i].image}">`)
+          }
+        </script>
+
+        <!-- Now, we define our form and tell it where to go, and also put our button down! -->
+
+        <form name='quantity_form' action="http://localhost:8080/invoice.html" method="POST">
+          <br>
+          <input type="submit" value="Purchase!" name="purchase_submit"></form>
+    </main>
+  </div>
+  <footer>
+    <h1>Enjoy our custom handmade crafts!</h1>
+    <br>
+  </footer>
+</body>
+
+</html>
