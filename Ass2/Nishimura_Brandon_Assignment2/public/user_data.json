@@ -1,0 +1,13 @@
+{
+    "admin": {
+        "name": "admin",
+        "password": "securepassword",
+        "email": "admin@hawaii.edu"
+    },
+    "itm 352": {
+        "name": "itm 352",
+        "password": "grader",
+        "email": "itm352@hawaii.edu"
+
+    }
+}

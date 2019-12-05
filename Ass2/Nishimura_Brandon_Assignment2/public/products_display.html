@@ -101,7 +101,7 @@ At the top, we have the functions we need for our page to run.
   </header>
   <div>
     <main>
-      <form>
+      <form name='quantity_form' action="purchase" method="GET">
         <script>
           for (i = 0; i < products.length; i++) {
             document.write(`
@@ -115,10 +115,9 @@ At the top, we have the functions we need for our page to run.
         </script>
 
         <!-- Now, we define our form and tell it where to go, and also put our button down! -->
-
-        <form name='quantity_form' action="purchase" method="GET">
           <br>
-          <input type="submit" value="Purchase!" name="purchase_submit"></form>
+          <input type="submit" value="Purchase!" name="purchase_submit">
+          </form>
     </main>
   </div>
   <footer>
