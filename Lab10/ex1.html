@@ -1,0 +1,48 @@
+<script>
+// Exercise 1a
+console.log("Exercise 1A!");
+var fav_foods = ["potatoes","eggs","bacon","rice"]; // Creates an array
+console.log("I made my fav_foods array with four elements: potatoes, eggs, bacon, and rice!");
+// console.log(fav_foods[2]);                       // Returns the third element
+
+document.write("Exercise 1A!");
+
+document.write(fav_foods);
+</script>
+
+<br>
+
+<script>
+fav_foods[1] = "salmon";
+document.getElementById("demo").innerHTML = fav_foods[0];
+
+// Exercise 1b 
+fav_foods[1] = "linguine";
+</script>
+
+<script>
+var fav_foods, text, fLen, i;
+var fLen = fav_foods.length;
+
+text = "<ul>";
+for (i = 0; i < fLen; i++) {
+  text += "<li>" + fav_foods[i] + "</li>";
+}
+text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+
+// Exercise 2
+</script>
+
+<script>
+document.write("<table border=1>");     // Tells JS that we're making a table
+for (i = 0; i < fLen; i++) {
+rowStr = "<tr>";                        // Shortcut to initialize table rows in the for loop
+  rowStr += `<td>${fav_foods[i]}</td>`; // Writes the table row
+  rowStr += "</tr>";                    // Closes the table row
+  document.write(rowStr);               // Prints the table row
+}
+</script>

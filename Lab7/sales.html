@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<script>
+     var item1 = 'Gillette Sensor 3 Razor';
+     var quantity1 = 2;
+     var price1 = 1.23;
+     var extended_price1 = 2.46;
+
+     var item2 = 'Barbasol Shaving Cream';
+     var quantity2 = 1;
+     var price2 = 2.64;
+
+     var item3 = 'Nautica Cologne';
+     var quantity3 = 1;
+     var price3 = 6.17;
+
+     var item3 = 'Rubbing Alcohol';
+     var quantity4 = 3;
+     var price4 = 0.98;
+
+     var item3 = 'Colgate Classic Toothbrush';
+     var quantity5 = 12;
+     var price5 = 1.89;
+
+     //
+     //
+
+     var extendedprice1 = price1 * quantity1
+     var extendedprice2 = price2 * quantity2
+     var extendedprice3 = price3 * quantity3
+     var extendedprice4 = price4 * quantity4
+     var extendedprice5 = price5 * quantity5
+    
+     document.write(item1, price1, quantity1, extendedprice1)
+     document.write(item2, price2, quantity2, extendedprice2)
+     document.write(item3, price3, quantity3, extendedprice3)
+     document.write(item4, price4, quantity4, extendedprice4)
+     document.write(item5, price5, quantity5, extendedprice5)
+    </script>
+<p>
+<script>
+    
+    var subtotal = extendedprice1 + extendedprice2 + extendedprice3 + extendedprice4 + extendedprice5
+    var tax = 1.0575
+    var total = subtotal * tax
+    document.write(total)
+    </script>
+    
+</p>
+
+<div>
+    <table border="2">
+      <tbody>
+        <tr>
+          <th style="text-align: center;" width="43%">"Item"</th>
+          <th style="text-align: center;" width="11%">Quantity</th>
+          <th style="text-align: center;" width="13%">Price</th>
+          <th style="text-align: center;" width="54%">Extended Price</th>
+        </tr>
+        <tr>
+          <td width="43%">Gillete Sensor 3</td>
+          <td align="center" width="11%">2</td>
+          <td width="13%">$1.23</td>
+          <td width="54%">$2.46</td>
+        </tr>
+        <tr>
+          <td width="43%">Barbasol Shaving Cream</td>
+          <td align="center" width="11%">1</td>
+          <td width="13%">$2.64</td>
+          <td width="54%">$2.64</td>
+        </tr>
+        <tr>
+          <td width="43%">Nautica Cologne</td>
+          <td align="center" width="11%">1</td>
+          <td width="13%">$6.17</td>
+          <td width="54%">$6.17</td>
+        </tr>
+        <tr>
+          <td width="43%">Rubbing Alcohol</td>
+          <td align="center" width="11%">3</td>
+          <td width="13%">$0.98</td>
+          <td width="54%">$2.94</td>
+        </tr>
+        <tr>
+          <td width="43%">Colgate Classic Toothbrush</td>
+          <td align="center" width="11%">12</td>
+          <td width="13%">$1.89</td>
+          <td width="54%">$22.68</td>
+        </tr>
+        <tr>
+          <td colspan="4" width="100%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;" colspan="3" width="67%">Sub-total</td>
+          <td width="54%">$36.89</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;" colspan="3" width="67%"><span style="font-family: arial;">Tax @ 5.75%</span></td>
+          <td width="54%">$2.12</td>
+        </tr>
+        <tr>
+          <td style="text-align: center;" colspan="3" width="67%"><strong>Total</strong></td>
+          <td width="54%"><strong>$39.01</strong></td>
+        </tr>
+      </tbody>
+    </table>
+    
+    </div>
+
+</body>
+</html>

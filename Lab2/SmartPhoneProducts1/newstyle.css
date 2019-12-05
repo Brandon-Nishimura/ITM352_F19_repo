@@ -1,0 +1,47 @@
+body {
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+p.regular {
+    text-align: center;   
+    Font: "Times";
+    font-size: 14px;
+    font-style: normal;
+}
+
+p.discount {
+    text-align: center;
+    Font: "Arial";
+    font-size: 20px;
+    font-style: "italics"
+}
+
+h1,h2 {
+    text-align: center;
+    color: green
+}
+
+img {  
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+.rotate img
+{
+  animation: rotation .3s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

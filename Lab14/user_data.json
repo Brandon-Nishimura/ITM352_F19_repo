@@ -1,0 +1,52 @@
+{
+    "dport": {
+        "name": "Dan Port",
+        "password": "portspassword",
+        "email": "dport@hawaii.edu"
+    },
+    "kazman": {
+        "name": "Rick Kazman",
+        "password": "kazmanpassword",
+        "email": "kazman@hawaii.edu"
+    },
+    "itm352": {
+        "name": "ITM 352",
+        "password": "grader",
+        "email": "itm352@hawaii.edu"
+    },
+    "POST.username": {
+        "name": "POST.username",
+        "password": "POST.password",
+        "email": "POST.email"
+    },
+    "a": {
+        "name": "a",
+        "password": "POST.password",
+        "email": "POST.email"
+    },
+    "b": {
+        "name": "b",
+        "password": "POST.password",
+        "email": "POST.email"
+    },
+    "c": {
+        "name": "c",
+        "password": "POST.password",
+        "email": "POST.email"
+    },
+    "d": {
+        "name": "d",
+        "password": "POST.password",
+        "email": "POST.email"
+    },
+    "e": {
+        "name": "e",
+        "password": "e",
+        "email": "a@a.com"
+    },
+    "f": {
+        "name": "f",
+        "password": "f",
+        "email": "a@a.com"
+    }
+}

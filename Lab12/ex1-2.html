@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab12Ex1</title>
+
+    <script>
+
+/*
+A function to check to make sure the user is putting in a non-negative interger,
+and showers errors if they are. 
+*/
+
+        function isNonNegInt(q, returnErrors = false) {
+            errors = [];                                             // Assume no errors at first
+            if (Number(q) != q) errors.push('Not a number!');        // Check if string is numerical
+            if (q < 0) errors.push('Negative value!');               // Check if it is non-ngative
+            if (parseInt(q) != q) errors.push('Not an integer!');    // Check that it is an integer
+
+            if (returnErrors) {                                      // Check to see if 'returnErrors' is true, otherwise ignored
+                return (errors);
+
+            } else {
+                return (errors.length == 0);
+            }
+
+        }
+
+/*
+A function to check to make sure the user is putting in a non-negative interger, 
+that returns their errors if they aren't! Otherwise, write their text in the span.
+*/
+
+        function checkQuantity() {                                   // Checks to make sure that the value in the textbox is a non-negative ineger
+            errs = isNonNegInt(quantity_textbox.value, true);
+            if (errs.length > 0) {
+                qty_textbox_message.innerHTML = errs.join(" ");      // Refers to isNonNegInt to return errors, if there are any
+            }
+            else {
+                qty_textbox_message.innerHTML = quantity_textbox.value + " chicken wings?";
+            }
+        }
+
+/*
+A function to display a page that thanks the users for their purchases, 
+but makes sure they only enter non-negative integers!
+*/
+
+        function displayPurchase() {
+            textboxValue = quantity_textbox.value;                   // A temporary variable to refer to what was written in the textbox
+            if (isNonNegInt(textboxValue))        
+            {            
+            document.write(`Thank you for purchasing ${textboxValue} chicken wings!`)      
+            }             
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1> Welcome to KFC!</h1> 
+    <h2>May we take your order?</h2>
+    <label for="quantity_textbox">Enter quantity desired </label>
+    <input type="text" id="quantity_textbox" onkeyup="checkQuantity();">
+    <span id='qty_textbox_message'> in this box!</span>
+    <br><br>
+    <input type="button" value="Purchase" onclick="displayPurchase();" 
+</body> 
+</html>
